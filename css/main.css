@@ -1,0 +1,220 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: white;
+}
+
+h1{
+  font-size: 70px;
+  margin: 20px 40px;
+  color: #5b5704;
+}
+
+i{
+  font-size: 40px;
+}
+
+.rubik-main{
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-dis{
+  font-size: 30px;
+  margin: 0 70px 0;
+  line-height: 1.5;
+}
+
+.dis{
+  margin: 5px 10px;
+}
+
+.layout {
+  width: 90%;
+  height: 90vh;
+  min-height: 600px;
+  background: white;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(18, 1fr); 
+  grid-auto-rows: 20px;
+  gap: 20px;
+}
+
+.box {
+  position: relative;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  overflow: hidden;
+  /* align-items: center; */
+  /* justify-content: center; */
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* Apply a animated gradient
+  Yo this is so cool trust me I learned it from the internet */
+
+  background: linear-gradient(270deg, #ef7e8b, #b5e5ff, #d3da8d); 
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+
+  transition: all 0.5s ease;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  /* Hover gradient (starts invisible) */
+  background: linear-gradient(270deg, #ef7eeb, #6ce2bd, #c26051);
+  background-size: 400% 400%;
+
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  animation: gradientMove 15s ease infinite;
+  z-index: 0;
+}
+
+.box:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.box:hover::before {
+  opacity: 1
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0.3;                /* hidden at first */
+  transition: opacity 1.2s ease;
+  pointer-events: none;      /* so image doesn’t block clicks */
+  z-index: 0;                /* stays behind text */
+}
+
+.box > * {
+  position: relative;
+  z-index: 1; /* keep text on top */
+}
+
+.box1{
+  grid-row: span 12;
+  grid-column: span 12;
+}
+
+.below{
+  grid-row: span 3;
+  grid-column: span 6;
+}
+
+.down{
+  grid-row: 13 / span 3;
+  grid-column: span 12;
+}
+
+.right {
+  grid-row: span 6;
+  grid-column: 13 / span 8; /* starts at col 13, spans to col 20 */
+}
+
+.connect{
+  justify-content: center;
+  align-items: center;
+}
+
+.box1::after{
+  background-image: url(../images/myImage.jpg);
+  filter: blur(2px);
+}
+
+.box1:hover::after {
+  opacity: 0.6;   
+}
+
+.box2::after{
+  background-image: url(../images/scl.png);
+}
+
+.box2:hover::after {
+  opacity: 0.9;
+}
+
+.box3::after{
+  background-image: url(../images/lead.jpg);
+  filter: blur(2px);
+}
+
+.box3:hover::after {
+  opacity: 0.8;
+  filter: blur(3px);
+}
+
+.box4::after{
+  background-image: url(../images/prj.png);
+  filter: blur(2px);
+}
+
+.box4:hover::after {
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+.box5::after{
+  background-image: url(../images/connect.png);
+  filter: blur(5px);
+}
+
+.box5:hover::after {
+  opacity: 0.8;
+  filter: blur(1px);
+  background-size: 80%;
+}
+
+.btn{
+  background: yellowgreen;
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 1064px){
+  .layout{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    grid-template-rows: unset;
+    height: auto; 
+  }
+
+    .layout .box {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .layout .box1 {
+    grid-row: span 2;
+  }
+}
+
+@keyframes gradientMove {   
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
