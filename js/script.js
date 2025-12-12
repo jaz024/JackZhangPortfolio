@@ -2,7 +2,7 @@ const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.ham-menu');
 const quotes = ["You will never know what I say.", 
   "Nice to meet you! What's your name? Don't tell me cuz I won't listen",
-  "Man what can I say",
+  "Oh my, what should I say, I am out of quotes.",
   "I would love to adopt a cat!", 
   "Maybe I should eat now, see you!"
 ]
