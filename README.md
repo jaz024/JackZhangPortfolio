@@ -23,6 +23,9 @@ https://www.bilibili.com/video/BV1gMSxBmEaw/?spm_id_from=333.337.search-card.all
 There is also a portfolio template that I took some reference:
 https://www.youtube.com/watch?v=hsHZXjQQFuQ&list=PL07efmqYWHZ_rVeQ1ws0ER9eL6cxo-d5V
 
+And last, this personal portfolio game me the idea of doing something like this:
+https://janelleamores.design
+
 
 How to navigate: 
 The main page has link to all webpages and files: About me page, educaiton page, projects page, leadership page. As well as the link to linkedin.com (not my personal linkedin, just the general one), my resume (without contact information), and a button to send someone@example.com a email (i guess this email doesnt exist).
