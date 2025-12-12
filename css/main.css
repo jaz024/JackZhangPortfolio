@@ -151,7 +151,7 @@ i{
 }
 
 .box2::after{
-  background-image: url(../images/scl.png);
+  background-image: url(../images/school.png);
 }
 
 .box2:hover::after {
